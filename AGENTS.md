@@ -1,11 +1,11 @@
 # renovate-config
 
-Shared Renovate preset for the ducky7go org. The repo contains only `LICENSE` and `default.json`.
+Shared Renovate preset for the ducky7go org. The repo holds `default.json` and `LICENSE`.
 
-`default.json` (verified content) has the `$schema` `https://docs.renovatebot.com/renovate-schema.json` and `"extends": ["config:recommended"]`, i.e. it currently adds nothing beyond Renovate's recommended preset.
+- `default.json` sets `$schema` to `https://docs.renovatebot.com/renovate-schema.json` and `"extends": ["config:recommended"]`. It adds nothing beyond Renovate's recommended preset.
+- Consumers reference it from `renovate.json` as `github>ducky7go/renovate-config` (or `local>ducky7go/renovate-config`). For example, `Ducky.Samples/renovate.json` uses the `github>` form.
 
-How it is consumed: a Renovate preset in a repo named `renovate-config` with `default.json` is referenced from other repos as `local>ducky7go/renovate-config` or `github>ducky7go/renovate-config` in their `renovate.json` `extends`. This is standard Renovate behaviour; no sibling checkout I inspected (SuperDucky, SuperDucky.Connector, SuperDucky.docs, DML) contains a Renovate config that references it yet.
+## Notes for editing
 
-Notes for editing:
-- Keep the file valid JSON and Renovate-schema compliant; there is no CI or test in this repo.
-- Changes affect every repo that extends this preset.
+- Keep `default.json` valid JSON and Renovate-schema compliant. The repo has no CI or tests, so check the file by hand.
+- Every repo that extends this preset is affected by a change here.
